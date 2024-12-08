@@ -2231,8 +2231,8 @@ if __name__ == '__main__':
         # 软件dev用
         print("Finding chromedriver in EasySpider",
               os.getcwd() + "/ElectronJS")
-        options.binary_location = "../ElectronJS/chrome_win64/chrome.exe"  # 指定chrome位置
-        driver_path = "../ElectronJS/chrome_win64/chromedriver_win64.exe"
+        options.binary_location = "../ElectronJS/chrome_linux64/chrome"  # 指定chrome位置
+        driver_path = "../ElectronJS/chrome_linux64/chromedriver_linux64"
         options.add_extension("../ElectronJS/XPathHelper.crx")
     else:
         options.binary_location = "./chrome.exe"  # 指定chrome位置
@@ -2327,7 +2327,8 @@ if __name__ == '__main__':
             service = json.loads(content.text)  # 加载服务信息
         else:
             print("local")
-            local_folder = os.path.join(os.getcwd(), "execution_instances")
+            local_folder = os.path.join(
+                os.getcwd(), "../ElectronJS", "execution_instances")
             if sys.platform == "darwin":
                 user_folder = os.path.expanduser(
                 "~/Library/Application Support/EasySpider/")
